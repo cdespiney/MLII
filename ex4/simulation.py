@@ -5,6 +5,7 @@ import numpy as np
 
 from agent import Agent
 from default_policy import default_policy
+from clement_despiney_baptiste_terras_policy import new_policy
 
 WORLD_SIZE = 8
 WORLD_UPDATE_PERIOD = 10
@@ -48,7 +49,7 @@ def run_simulation() -> list:
             # print(f"rewards: {rewards}\n")
 
         # choose action and move agent
-        action = default_policy(agent)
+        action = new_policy(agent)
         agent.move(action, WORLD_SIZE)
         # print(f"move {action}")
         # print(f"position: {agent.position}")
