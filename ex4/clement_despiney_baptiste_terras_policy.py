@@ -30,7 +30,7 @@ def new_policy(agent: Agent) -> str:
         return actions[random.randint(0, 1)]
     
     if (agent.position != 7 and new_policy.value_function[agent.position] < new_policy.value_function[agent.position + 1]) and (agent.position != 0 and new_policy.value_function[agent.position] <  new_policy.value_function[agent.position -1]):
-        return "left" if new_policy.value_function[agent.position - 1] <= new_policy.value_function[agent.position + 1] else "right"
+        return "left" if new_policy.value_function[agent.position - 1] >= new_policy.value_function[agent.position + 1] else "right"
     if agent.position != 0 and new_policy.value_function[agent.position] <  new_policy.value_function[agent.position - 1]:
         return "left"
     if agent.position != 7 and new_policy.value_function[agent.position] <  new_policy.value_function[agent.position + 1]:
